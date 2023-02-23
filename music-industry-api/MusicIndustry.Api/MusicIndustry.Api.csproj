@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>MusicIndustry.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MusicIndustry.Api.Common\MusicIndustry.Api.Common.csproj" />
+    <ProjectReference Include="..\MusicIndustry.Api.Core\MusicIndustry.Api.Core.csproj" />
+    <ProjectReference Include="..\MusicIndustry.Api.Domain\MusicIndustry.Api.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

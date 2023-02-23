@@ -1,0 +1,274 @@
+﻿@model ViewModel<MusicIndustry.UI.Models.Contact.ContactCreateEntryViewModel>
+@{
+    ViewData["Title"] = "New Contact";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form action="@UIRoutesHelper.Contact.CreateEntry.GetUrl()" role="form" method="post" asp-antiforgery="true">
+    <div class="form-group row">
+        <label asp-for="Data.Form.FirstName" class="col-sm-2 col-form-label font-bold">FirstName:</label>
+        <input asp-for="Data.Form.FirstName" class="form-control col-sm-10 h-150 col-sm-10 h-150" placeholder="FirstName">
+        <span asp-validation-for="Data.Form.FirstName" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.LastName" class="col-sm-2 col-form-label font-bold">LastName:</label>
+        <input asp-for="Data.Form.LastName" class="form-control col-sm-10 h-150 col-sm-10 h-150" placeholder="LastName">
+        <span asp-validation-for="Data.Form.LastName" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.Title" class="col-sm-2 col-form-label font-bold">Title:</label>
+        <input asp-for="Data.Form.Title" class="form-control col-sm-10 h-150" placeholder="Title">
+        <span asp-validation-for="Data.Form.Title" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.Company" class="col-sm-2 col-form-label font-bold">Company:</label>
+        <input asp-for="Data.Form.Company" class="form-control col-sm-10 h-150" placeholder="Company">
+        <span asp-validation-for="Data.Form.Company" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.Email" class="col-sm-2 col-form-label font-bold">Email:</label>
+        <input asp-for="Data.Form.Email" class="form-control col-sm-10 h-150" placeholder="Email">
+        <span asp-validation-for="Data.Form.Email" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.PhoneCell" class="col-sm-2 col-form-label font-bold">PhoneCell:</label>
+        <input asp-for="Data.Form.PhoneCell" class="form-control col-sm-10 h-150" placeholder="PhoneCell">
+        <span asp-validation-for="Data.Form.PhoneCell" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+
+        <label asp-for="Data.Form.PhoneBusiness" class="col-sm-2 col-form-label font-bold">PhoneBusiness:</label>
+        <input asp-for="Data.Form.PhoneBusiness" class="form-control col-sm-10 h-150" placeholder="PhoneBusiness">
+        <span asp-validation-for="Data.Form.PhoneBusiness" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.Fax" class="col-sm-2 col-form-label font-bold">Fax:</label>
+        <input asp-for="Data.Form.Fax" class="form-control col-sm-10 h-150" placeholder="Fax">
+        <span asp-validation-for="Data.Form.Fax" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.AddressLine1" class="col-sm-2 col-form-label font-bold">AddressLine1:</label>
+        <input asp-for="Data.Form.AddressLine1" class="form-control col-sm-10 h-150" placeholder="AddressLine1">
+        <span asp-validation-for="Data.Form.AddressLine1" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.AddressLine2" class="col-sm-2 col-form-label font-bold">AddressLine2:</label>
+        <input asp-for="Data.Form.AddressLine2" class="form-control col-sm-10 h-150" placeholder="AddressLine2">
+        <span asp-validation-for="Data.Form.AddressLine2" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.City" class="col-sm-2 col-form-label font-bold">City:</label>
+        <input asp-for="Data.Form.City" class="form-control col-sm-10 h-150" placeholder="City">
+        <span asp-validation-for="Data.Form.City" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.State" class="col-sm-2 col-form-label font-bold">State:</label>
+        <input asp-for="Data.Form.State" class="form-control col-sm-10 h-150" placeholder="State">
+        <span asp-validation-for="Data.Form.State" class="text-danger text-break"></span>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Data.Form.Zip" class="col-sm-2 col-form-label font-bold">Zip:</label>
+        <input asp-for="Data.Form.Zip" class="form-control col-sm-10 h-150" placeholder="Zip">
+        <span asp-validation-for="Data.Form.Zip" class="text-danger text-break"></span>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <div class="form-check abc-checkbox abc-checkbox-info">
+                <input class="form-check-input" type="checkbox" id="checkbox1" asp-for="Data.Form.IsActive" checked>
+                <label class="form-check-label font-bold" for="checkbox1" asp-for="Data.Form.IsActive">
+                    Is Active
+                </label>
+                <span asp-validation-for="Data.Form.IsActive" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="Data.LabelIds" class="form-control" id="music-label-ids">
+    <input type="hidden" asp-for="Data.MusicianIds" class="form-control" id="musician-ids">
+    <input type="hidden" asp-for="Data.PlatformIds" class="form-control" id="platform-ids">
+    
+    <h1>Relationships</h1>
+
+    <div class="form-group row">
+        <label>Add Music Label, Musician or Platform</label>
+        <select style="display: inline" asp-items="Model.Data.Items" id="selected-relation"></select>
+        <button style="display: inline;  margin-left: 100px" type="button" onclick="SetRelationOnClicked()" class="btn btn-primary btn-md">Add</button>
+    </div>
+    
+    <div class="toast">
+      <div class="toast-header">
+        Warning
+      </div>
+      <div class="toast-body">
+        This item already exist
+      </div>
+    </div>
+
+    <div style="border: gray solid 1px; margin-bottom: 20px">
+        <label style="margin-left: 10px; vertical-align: sub">Music Labels</label>
+        <ul style="min-height: 100px; list-style-type: none; border-top: gray solid 1px" id="selected-music-labels"></ul>
+    </div>
+    
+    <div style="border: gray solid 1px; margin-bottom: 20px">
+        <label style="margin-left: 10px; vertical-align: sub">Musicians</label>
+        <ul style="min-height: 100px; list-style-type: none; border-top: gray solid 1px" id="selected-musicians"></ul>
+    </div>
+
+    <div style="border: gray solid 1px; margin-bottom: 20px">
+        <label>Platforms</label>
+        <ul style="min-height: 100px; list-style-type: none; border-top: gray solid 1px" id="selected-platforms"></ul>
+    </div>
+
+    <div class="text-center">
+        <a href="@UIRoutesHelper.Contact.GetEntries.GetUrl()" class="btn btn-light btn-md">Close</a>
+        <button type="submit" class="btn btn-primary btn-md">Save</button>
+    </div>
+</form>
+
+@section scripts {
+
+    <script type="text/javascript">
+
+    function SetRelationOnClicked()
+    {
+      let select = document.getElementById('selected-relation');
+        
+      let selectedText = select.options[select.selectedIndex].innerText;
+        
+      SetRelation(selectedText, select.value);
+    }
+
+    function SetRelation(selectedText, id) {
+      if (!id){
+        return
+      }
+        
+      let split = selectedText.split(' ');
+      let name = split[0];
+      let type = split[1].substring(1, split[1].length-1);
+      
+      switch (type) {
+        case 'Label':
+            let labels = document.getElementById('music-label-ids');
+            
+            if (labels.value.split(" ").includes(id)) {
+                $('.toast').toast('show');
+                return
+            }
+            
+            labels.value = labels.value + " " + id
+            
+            CreateMusicLabel(name, id);
+            break;
+        case 'Musician':
+            let musicians = document.getElementById('musician-ids');
+           
+            if (musicians.value.split(" ").includes(id)) {
+                $('.toast').toast('show');
+                return
+            }
+            
+            musicians.value = musicians.value + " " + id
+            
+            CreateMusician(name, id);
+            break;
+        case 'Platform':
+            let platforms = document.getElementById('platform-ids');
+            
+            if (platforms.value.split(" ").includes(id)) {
+                $('.toast').toast('show');
+                return
+            }
+            
+            platforms.value = platforms.value + " " + id
+            
+            CreatePlatform(name, id);
+            break;
+        default: return;
+      }
+    }
+    
+    function CreateMusicLabel(text, id) {
+      let musicLabelList = document.getElementById('selected-music-labels');
+      let newLabel = document.createElement('li');
+      let removeButton = document.createElement('button');
+      removeButton.type = "button"
+      removeButton.className = "btn btn-secondary btn-square-sm";
+      removeButton.innerText = "X";
+      removeButton.title = id
+      removeButton.onclick = function () { removeLabelClicked(this) }
+      newLabel.append(text);
+      newLabel.appendChild(removeButton);
+      musicLabelList.appendChild(newLabel);
+    }
+    
+    function CreateMusician(text, id) {
+      let musicianList = document.getElementById('selected-musicians');
+      let newMusician = document.createElement('li');
+      let removeButton = document.createElement('button');
+      removeButton.type = "button"
+      removeButton.className = "btn btn-secondary btn-square-sm";
+      removeButton.innerText = "X";
+      removeButton.title = id
+      removeButton.onclick = function () { removeMusicianClicked(this) }
+      newMusician.append(text);
+      newMusician.appendChild(removeButton);
+      musicianList.appendChild(newMusician);
+    }
+    
+    function CreatePlatform(text, id) {
+      let platformList = document.getElementById('selected-platforms');
+      let newPlatform = document.createElement('li');
+      let removeButton = document.createElement('button');
+      removeButton.type = "button"
+      removeButton.className = "btn btn-secondary btn-square-sm";
+      removeButton.innerText = "X";
+      removeButton.title = id
+      removeButton.onclick = function () { removePlatformClicked(this) }
+      newPlatform.append(text);
+      newPlatform.appendChild(removeButton);
+      platformList.appendChild(newPlatform);
+    }
+    
+     function removePlatformClicked(button){
+       let id = button.title;
+       let platforms = document.getElementById('platform-ids')
+         
+       platforms.value = platforms.value.replace(` ${id}`,'')
+         
+       button.parentNode.remove()
+    }
+        
+    function removeMusicianClicked(button){
+      let id = button.title;
+      let musicians = document.getElementById('musician-ids')
+
+      musicians.value = musicians.value.replace(` ${id}`,'')
+         
+      button.parentNode.remove()
+    }
+        
+    function removeLabelClicked(button){
+      let id = button.title;
+         let labels = document.getElementById('music-label-ids')
+         
+      labels.value = labels.value.replace(` ${id}`,'')
+         
+      button.parentNode.remove()
+    }
+</script>
+}
+
